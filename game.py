@@ -15,7 +15,11 @@ print(f"Palabra: {word_displayed}")
 for i in range(max_attempts):
  # Pedir al jugador que ingrese una letra
     letter = input("Ingresa una letra: ").lower()
- # Verificar si la letra ya ha sido adivinada
+# Solucion del bug con un dato vacio, no se gasta intento si se ingresa
+    while letter == "":
+        print("El valor ingresado no es valido")
+        letter= input("Ingrese una letra ")
+# Verificar si la letra ya ha sido adivinada
     if letter in guessed_letters:
         print("Ya has intentado con esa letra. Intenta con otra.")
         continue
